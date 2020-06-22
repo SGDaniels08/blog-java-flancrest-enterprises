@@ -1,42 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multithread Blog</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
   </head>
-  <header><h1>Multithread Blog</h1></header>
+  <header>
+    <h1>Multithread Blog</h1>
+    <nav>
+      <li>Blog Home</li>
+      <ul>
+        <li>Authors</li>
+        <li>Categories</li>
+        <li>Tags</li>
+      </ul>
+    </nav>
+  </header>
   <body>
     <article>
       <div class="post-heading">
         <h2>Crochet Cthulhu</h2>
-        <h3>DrShawniels</h3>
+        <h3><a>DrShawniels</a></h3>
+        <!--localhost8080:/authors/DrShawniels-->
         <h3>21-Jun-2020</h3>
-        <h3>GENRE: Crochet</h3>
+        <h3>CATEGORY: <a>Crochet</a></h3>
+        <!--localhost8080:/categories/Crochet-->
         <h4>Tags</h4>
         <ul>
-            <li>Amigurumi</li>
-            <li>Mythos</li>
+          <li><a>Amigurumi</a></li>
+          <!--localhost8080:/tags/Amigurumi-->
+          <li><a>Mythos</a></li>
+          <!--localhost8080:/tags/Mythos-->
         </ul>
       </div>
       <div class="post-content">
+        <figure><img /><img /><img /></figure>
         <p>A cool and adorable Cthulhu!</p>
       </div>
     </article>
     <article>
-        <div class="post-heading">
-          <h2>Paw Print Heart</h2>
-          <h3>DrShawniels</h3>
-          <h3>15-Mar-2020</h3>
-          <h3>GENRE: Cross-stitch</h3>
-          <h4>Tags</h4>
-          <ul>
-              <li>Metallic Thread</li>
-          </ul>
-        </div>
-        <div class="post-content">
-          <p>A pawprint heart, with shiny metallic thread</p>
-        </div>
-      </article>
+      <div class="post-heading">
+        <h2>Paw Print Heart</h2>
+        <h3><a>DrShawniels</a></h3>
+        <!--localhost8080:/authors/DrShawniels-->
+        <h3>15-Mar-2020</h3>
+        <h3>CATEGORY: <a>Cross-stitch</a></h3>
+        <!--localhost8080:/categories/Cross-stitch-->
+        <h4>Tags</h4>
+        <ul>
+          <li><a>Metallic Thread</a></li>
+          <!--localhost8080:/tags/Metallic Thread-->
+        </ul>
+      </div>
+      <div class="post-content">
+        <figure><img /><img /><img /></figure>
+        <p>A pawprint heart, with shiny metallic thread</p>
+      </div>
+    </article>
   </body>
 </html>
