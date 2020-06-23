@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multithread Blog</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+<header>
+    <h1>Multithread Blog</h1>
+    <nav>
+        <li>Blog Home</li>
+        <ul>
+            <li>Authors</li>
+            <li>Categories</li>
+            <li>Tags</li>
+        </ul>
+    </nav>
+</header>
+<body>
+<article>
+    <div class="post-heading">
+        <h2>Crochet Cthulhu</h2>
+        <h3><a>DrShawniels</a></h3>
+        <!--localhost8080:/authors/DrShawniels-->
+        <h3>21-Jun-2020</h3>
+        <h3>CATEGORY: <a>Crochet</a></h3>
+        <!--localhost8080:/categories/Crochet-->
+        <h4>Tags</h4>
+        <ul th:each="tag : ${post.tags}">
+            <li><a th:text="tag.name">Amigurumi</a></li>
+            <!--localhost8080:/tags/Amigurumi-->
+        </ul>
+    </div>
+    <div class="post-content">
+        <figure><img /></figure>
+        <p>A cool and adorable Cthulhu!</p>
+    </div>
+</article>
+</body>
+</html>
