@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+header h1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+header h2 {
+    display: flex;
+    justify-content: center;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
