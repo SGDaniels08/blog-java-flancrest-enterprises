@@ -67,11 +67,13 @@ public class Populator implements CommandLineRunner {
         Post post4 = new Post("Crochet Zoidberg", sgdaniels08, date1, crochet,"crochet-zoidberg.jpg", "Why not?", amigurumi, cartoon, gift);
         Post post5 = new Post("Cardinal", drShawniels, date1, crochet, "crochet-cardinal.jpg", "Mother's day present for my grandmother", amigurumi, gift);
         Post post6 = new Post("Gravity Falls Gnome", sgdaniels08, date1, crossStitch,"crossstitch-gnome.jpg", "An unfinished but awesome project", cartoon);
+        Post post7 = new Post("Crochet Cat", sgdaniels08, date1, crochet, "crochet-cat.jpg", "A gift for my cousin", amigurumi, gift);
         postRepo.save(post1);
         postRepo.save(post2);
         postRepo.save(post3);
         postRepo.save(post4);
         postRepo.save(post5);
         postRepo.save(post6);
+        postRepo.save(post7);
     }
 }
