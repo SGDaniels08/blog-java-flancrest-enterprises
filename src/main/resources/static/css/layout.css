@@ -21,6 +21,16 @@
     align-items: center;
 }
 
+.header {
+    height: 30vh;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
 .gap {
     height: 3rem;
 }

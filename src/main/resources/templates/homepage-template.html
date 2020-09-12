@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="/src/main/resources/static/css/layout.css"
-      type="text/css"
+      th:href="@{/css/layout.css}"
     />
     <link
       rel="stylesheet"
-      href="/src/main/resources/static/css/style.css"
-      type="text/css"
+      th:href="@{/css/style.css}"
     />
     <title>Multithread Blog - Homepage</title>
   </head>
@@ -52,121 +50,10 @@
               >
             </li>
           </ul>
-          <img th:src="@{'./images/' + ${post.pictureName}}" />
+          <img th:src="@{'./images/' + ${post.pictureName}}" class="post__picture" />
           <p th:text="${post.content}" class="post__content"></p>
       </article>
-      <article th:each="post : ${posts}" class="post__full-post">
-          <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
-          <h4 class="post__author">
-            <a th:text="${post.author}" th:href="'/authors/' + ${post.author}"
-              >AUTHOR</a
-            >
-          </h4>
-          <h4 class="post__publish-date" th:text="${post.publishDate}">
-            PUBLISH-DATE
-          </h4>
-          <h3 class="post__category">
-            <a
-              th:text="${post.category}"
-              th:href="'/categories/' + ${post.category}"
-              >CATEGORY</a
-            >
-          </h3>
-          <h3>Tags:</h3>
-          <ul th:each="tag : ${post.tags}">
-            <li>
-              <a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}"
-                >TAG</a
-              >
-            </li>
-          </ul>
-          <img th:src="@{'./images/' + ${post.pictureName}}" />
-          <p th:text="${post.content}" class="post__content"></p>
-      </article>
-      <article th:each="post : ${posts}" class="post__full-post">
-          <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
-          <h4 class="post__author">
-            <a th:text="${post.author}" th:href="'/authors/' + ${post.author}"
-              >AUTHOR</a
-            >
-          </h4>
-          <h4 class="post__publish-date" th:text="${post.publishDate}">
-            PUBLISH-DATE
-          </h4>
-          <h3 class="post__category">
-            <a
-              th:text="${post.category}"
-              th:href="'/categories/' + ${post.category}"
-              >CATEGORY</a
-            >
-          </h3>
-          <h3>Tags:</h3>
-          <ul th:each="tag : ${post.tags}">
-            <li>
-              <a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}"
-                >TAG</a
-              >
-            </li>
-          </ul>
-          <img th:src="@{'./images/' + ${post.pictureName}}" />
-          <p th:text="${post.content}" class="post__content"></p>
-      </article>
-      <article th:each="post : ${posts}" class="post__full-post">
-          <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
-          <h4 class="post__author">
-            <a th:text="${post.author}" th:href="'/authors/' + ${post.author}"
-              >AUTHOR</a
-            >
-          </h4>
-          <h4 class="post__publish-date" th:text="${post.publishDate}">
-            PUBLISH-DATE
-          </h4>
-          <h3 class="post__category">
-            <a
-              th:text="${post.category}"
-              th:href="'/categories/' + ${post.category}"
-              >CATEGORY</a
-            >
-          </h3>
-          <h3>Tags:</h3>
-          <ul th:each="tag : ${post.tags}">
-            <li>
-              <a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}"
-                >TAG</a
-              >
-            </li>
-          </ul>
-          <img th:src="@{'./images/' + ${post.pictureName}}" />
-          <p th:text="${post.content}" class="post__content"></p>
-      </article>
-      <article th:each="post : ${posts}" class="post__full-post">
-          <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
-          <h4 class="post__author">
-            <a th:text="${post.author}" th:href="'/authors/' + ${post.author}"
-              >AUTHOR</a
-            >
-          </h4>
-          <h4 class="post__publish-date" th:text="${post.publishDate}">
-            PUBLISH-DATE
-          </h4>
-          <h3 class="post__category">
-            <a
-              th:text="${post.category}"
-              th:href="'/categories/' + ${post.category}"
-              >CATEGORY</a
-            >
-          </h3>
-          <h3>Tags:</h3>
-          <ul th:each="tag : ${post.tags}">
-            <li>
-              <a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}"
-                >TAG</a
-              >
-            </li>
-          </ul>
-          <img th:src="@{'./images/' + ${post.pictureName}}" />
-          <p th:text="${post.content}" class="post__content"></p>
-      </article>
+
       <form action="/add-post" method="POST" class="new-post-form">
         <label for="new-post__title-input" class="form__label">Title</label>
         <input

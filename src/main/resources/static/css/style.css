@@ -26,6 +26,7 @@
 }
 
 .post__full-post {
+    border: solid black 25px;
     background-color: red;
     border-radius: 20%;
 }
