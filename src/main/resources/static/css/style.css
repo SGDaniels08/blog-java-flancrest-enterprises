@@ -1,7 +1,19 @@
 /* Components */
+/* CSS HEX */
+:root {
+--dark-slate-blue: #3d3b8eff;
+--glaucous: #6883baff;
+--cultured: #f9f9f9ff;
+--china-pink: #e072a4ff;
+--granny-smith-apple: #b0e298ff;
+}
 
 .header {
-    background-color: red;
+    background-color: blue;
+}
+
+.header__title {
+    color: var(--dark-slate-blue);
 }
 
 /** {*/
