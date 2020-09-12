@@ -17,8 +17,17 @@
     color: var(--dark-slate-blue);
 }
 
+.gap {
+    background-color: var(--glaucous);
+}
+
 .main {
     background-color: var(--glaucous);
+}
+
+.post__full-post {
+    background-color: red;
+    border-radius: 20%;
 }
 
 .footer {

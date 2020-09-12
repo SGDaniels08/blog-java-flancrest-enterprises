@@ -4,25 +4,23 @@
     box-sizing: border-box;
 }
 
-
-.header {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100vw;
-    height: 25vh;
+.post__full-post {
+    width: 750px;
+    height: 750px;
+    max-width: 75vw;
+    max-height: 75vw;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 
-.header__title {
-    width: 95vw;
-    margin: 0 auto;
-    max-width: 800px;
-}
- 
-.header_list {
+.post__full-post {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
-    width: 30vw;
+    align-items: center;
+}
+
+.gap {
+    height: 3rem;
 }
