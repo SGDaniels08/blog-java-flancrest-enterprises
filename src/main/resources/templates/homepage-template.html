@@ -3,60 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" type="text/css"/>
-    <link rel="stylesheet" href="../css/layout.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/layout.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/style.css"
+      type="text/css"
+    />
     <title>Multithread Blog - Homepage</title>
   </head>
+  <body>
   <header class="header">
     <h1 class="header__title"><a href="/">Multithread Blog</a></h1>
-    <nav class="header__nav">
-      <ul class="header__list">
-        <li><a href="/categories">Categories</a></li>
-        <li><a href="/authors">Authors</a></li>
-        <li><a href="/tags">Tags</a></li>
-        <li>New user?</li>
-      </ul>
-    </nav>
+    <ul class="header__list">
+      <li><a href="/categories">Categories</a></li>
+      <li><a href="/authors">Authors</a></li>
+      <li><a href="/tags">Tags</a></li>
+      <li>New user?</li>
+    </ul>
   </header>
-  <body>
+  <main class="main">
     <article th:each="post : ${posts}" class="post__full-post">
       <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
-      <h4 class="post__author"><a th:text="${post.author}" th:href="'/authors/' + ${post.author}">AUTHOR</a></h4>
-      <h4 class="post__publish-date" th:text="${post.publishDate}">PUBLISH-DATE</h4>
-      <h3 class="post__category"><a th:text="${post.category}" th:href="'/categories/' + ${post.category}">CATEGORY</a></h3>
+      <h4 class="post__author">
+        <a th:text="${post.author}" th:href="'/authors/' + ${post.author}"
+          >AUTHOR</a
+        >
+      </h4>
+      <h4 class="post__publish-date" th:text="${post.publishDate}">
+        PUBLISH-DATE
+      </h4>
+      <h3 class="post__category">
+        <a
+          th:text="${post.category}"
+          th:href="'/categories/' + ${post.category}"
+          >CATEGORY</a
+        >
+      </h3>
       <h3>Tags:</h3>
       <ul th:each="tag : ${post.tags}">
-          <li><a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}">TAG</a></li>
+        <li>
+          <a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}"
+            >TAG</a
+          >
+        </li>
       </ul>
       <img th:src="@{'./images/' + ${post.pictureName}}" />
       <p th:text="${post.content}" class="post__content"></p>
     </article>
     <form action="/add-post" method="POST" class="new-post-form">
       <label for="new-post__title-input" class="form__label">Title</label>
-      <input type="text" name="title" class="form__title-input" id="new-post__title-input" />
-      <br>
+      <input
+        type="text"
+        name="title"
+        class="form__title-input"
+        id="new-post__title-input"
+      />
+      <br />
       <!-- Author from droplist -->
       <label for="new-post__author-select" class="form__label">Author</label>
       <select id="new-post__author-select" name="userName">
-        <option th:each="author : ${authors}" th:text="${author.userName}">USERNAME</option>
+        <option th:each="author : ${authors}" th:text="${author.userName}">
+          USERNAME
+        </option>
       </select>
-        <br>
+      <br />
       <!-- LocalDate set in Controller -->
       <!-- Category from droplist -->
-      <label for="new-post__category-select" class="form__label">Category</label>
+      <label for="new-post__category-select" class="form__label"
+        >Category</label
+      >
       <select id="new-post__category-select" name="categoryName">
-        <option th:each="category : ${categories}" th:text="${category.categoryName}">CATEGORYNAME</option>
+        <option
+          th:each="category : ${categories}"
+          th:text="${category.categoryName}"
+        >
+          CATEGORYNAME
+        </option>
       </select>
-      <br>
-      <label for="new-post__content-input" class="form__label">Blog Content:</label>
+      <br />
+      <label for="new-post__content-input" class="form__label"
+        >Blog Content:</label
+      >
       <input type="textarea" name="content" id="new-post__content-input" />
-      <br>
+      <br />
       <!-- Selector buttons for tags -->
       <label for="new-post__tags-select" class="form__label"></label>
-      <input type="checkbox" name="tagNames[]" id="new-post__tags-select" th:each="tag : ${tags}" th:text="${tag.tagName}" th:value="${tag.tagName}" />
-      <br>
+      <input
+        type="checkbox"
+        name="tagNames[]"
+        id="new-post__tags-select"
+        th:each="tag : ${tags}"
+        th:text="${tag.tagName}"
+        th:value="${tag.tagName}"
+      />
+      <br />
       <button type="submit">Add post</button>
     </form>
+  </main>
   </body>
-  <footer></footer>
+  <footer class="footer">
+    <p>Dr. Shawniels - 2020</p>
+  </footer>
 </html>
